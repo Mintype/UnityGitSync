@@ -1,3 +1,7 @@
+using System;
+using System.Diagnostics;
+using System.Windows.Forms;
+
 namespace UnityGitSync
 {
     internal static class Program
