@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System.Security.Policy;
 using System.Net;
+using static System.Windows.Forms.DataFormats;
 
 namespace UnityGitSync
 {
@@ -25,6 +26,7 @@ namespace UnityGitSync
                 if(isGitAuthed())
                 {
                     button1.Enabled = false;
+                    OpenNewWindow();
                 }
                 else
                 {
@@ -137,6 +139,11 @@ namespace UnityGitSync
                 UseShellExecute = true
             };
             Process.Start(psi);
+        }
+        private void OpenNewWindow()
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
         }
     }
 }
