@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            FolderOpenerButton = new Button();
             label1 = new Label();
             textBox1 = new TextBox();
             SuspendLayout();
             // 
-            // button1
+            // FolderOpenerButton
             // 
-            button1.Location = new Point(244, 92);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            FolderOpenerButton.Location = new Point(244, 92);
+            FolderOpenerButton.Name = "FolderOpenerButton";
+            FolderOpenerButton.Size = new Size(105, 30);
+            FolderOpenerButton.TabIndex = 0;
+            FolderOpenerButton.Text = "Open Project";
+            FolderOpenerButton.UseVisualStyleBackColor = true;
+            FolderOpenerButton.Click += FolderOpenerButton_Click;
             // 
             // label1
             // 
@@ -69,7 +70,7 @@
             ClientSize = new Size(382, 503);
             Controls.Add(textBox1);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(FolderOpenerButton);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -81,7 +82,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button FolderOpenerButton;
         private Label label1;
         private TextBox textBox1;
     }

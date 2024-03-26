@@ -11,6 +11,7 @@ namespace UnityGitSync
     public partial class Form1 : Form
     {
         private bool gitInstalled;
+        private string folderPath;
         public Form1()
         {
             InitializeComponent();
@@ -135,6 +136,35 @@ namespace UnityGitSync
                 UseShellExecute = true
             };
             Process.Start(psi);
+        }
+        private string getFolderPath()
+        {
+            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+            {
+                folderBrowserDialog.Description = "Select your Unity Project folder.";
+                folderBrowserDialog.RootFolder = Environment.SpecialFolder.MyComputer;
+
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedFolder = folderBrowserDialog.SelectedPath;
+                    // Now you have the path to the selected folder (selectedFolder)
+                    // You can use this path to access files within the selected folder
+                    return selectedFolder;
+                }
+            }
+            return null;
+        }
+
+        private void FolderOpenerButton_Click(object sender, EventArgs e)
+        {
+            string folderPath = getFolderPath();
+            if (folderPath != null)
+            {
+                this.folderPath = folderPath;
+                MessageBox.Show("Selected folder: " + folderPath); // remove later
+            }
+            else
+                MessageBox.Show("Selected folder was null.");
         }
     }
 }
