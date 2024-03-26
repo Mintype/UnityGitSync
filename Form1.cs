@@ -172,14 +172,14 @@ namespace UnityGitSync
         }
         public static string GetFolderNameFromPath(string path)
         {
-            int lastDot = path.LastIndexOf('.');
-            if (lastDot == -1)
+            int lastBackSlash = path.LastIndexOf('\\');
+            if (lastBackSlash == -1)
             {
                 return path;
             }
             else
             {
-                return path.Substring(lastDot + 1);
+                return path.Substring(lastBackSlash + 1);
             }
         }
     }
