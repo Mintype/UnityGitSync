@@ -160,11 +160,27 @@ namespace UnityGitSync
             string folderPath = getFolderPath();
             if (folderPath != null)
             {
+                ProjectName.Text = GetFolderNameFromPath(folderPath);
                 this.folderPath = folderPath;
-                MessageBox.Show("Selected folder: " + folderPath); // remove later
+                MessageBox.Show("Selected folder: " + folderPath); // remove later, use: testing
             }
             else
-                MessageBox.Show("Selected folder was null.");
+            {
+                ProjectName.Text = "";
+                MessageBox.Show("Selected folder was null."); // notify user if folder was null
+            }
+        }
+        public static string GetFolderNameFromPath(string path)
+        {
+            int lastDot = path.LastIndexOf('.');
+            if (lastDot == -1)
+            {
+                return path;
+            }
+            else
+            {
+                return path.Substring(lastDot + 1);
+            }
         }
     }
 }

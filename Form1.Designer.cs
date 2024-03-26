@@ -30,7 +30,7 @@
         {
             FolderOpenerButton = new Button();
             label1 = new Label();
-            textBox1 = new TextBox();
+            ProjectName = new TextBox();
             SuspendLayout();
             // 
             // FolderOpenerButton
@@ -48,27 +48,27 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("UD Digi Kyokasho NK-B", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 128);
-            label1.Location = new Point(100, 43);
+            label1.Location = new Point(113, 43);
             label1.Name = "label1";
             label1.Size = new Size(169, 26);
             label1.TabIndex = 1;
             label1.Text = "UnityGitSync";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // textBox1
+            // ProjectName
             // 
-            textBox1.Location = new Point(23, 93);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 2;
+            ProjectName.Location = new Point(23, 93);
+            ProjectName.Name = "ProjectName";
+            ProjectName.ReadOnly = true;
+            ProjectName.Size = new Size(125, 27);
+            ProjectName.TabIndex = 2;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(382, 503);
-            Controls.Add(textBox1);
+            Controls.Add(ProjectName);
             Controls.Add(label1);
             Controls.Add(FolderOpenerButton);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -84,6 +84,6 @@
 
         private Button FolderOpenerButton;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox ProjectName;
     }
 }
