@@ -10,23 +10,19 @@ namespace UnityGitSync
 {
     public partial class Form1 : Form
     {
+        private bool gitInstalled;
         public Form1()
         {
             InitializeComponent();
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            bool gitInstalled = IsGitInstalled();
-
+            gitInstalled = IsGitInstalled();
             if (gitInstalled)
             {
                 Console.WriteLine("Git is installed.");
                 //Console.WriteLine("Git Auth: " + isGitAuthed());
-                if(isGitAuthed())
+                if (isGitAuthed())
                 {
-                    button1.Enabled = false;
-                    OpenNewWindow();
+
                 }
                 else
                 {
@@ -139,11 +135,6 @@ namespace UnityGitSync
                 UseShellExecute = true
             };
             Process.Start(psi);
-        }
-        private void OpenNewWindow()
-        {
-            Form2 form2 = new Form2();
-            form2.Show();
         }
     }
 }
